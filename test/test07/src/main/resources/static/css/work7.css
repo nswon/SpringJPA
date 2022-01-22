@@ -1,0 +1,270 @@
+main {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 100vh;
+    place-items: center;
+    background: radial-gradient(
+            circle at 50% 52.5%,
+            hsla(232, 100%, 12%, 1) 50%,
+            hsla(232, 100%, 12%, 0) 100%
+    );
+
+    animation: and-the-news 15000ms -7500ms infinite alternate linear;
+}
+
+main > div {
+    grid-row: 1;
+    grid-column: 1;
+    --dim: 90vmin;
+    width: var(--dim);
+    height: var(--dim);
+    display: grid;
+    place-items: center;
+    mix-blend-mode: overlay;
+    perspective: 200vmin;
+    transform: scale(var(--s));
+}
+main > div > div {
+    width: calc(var(--dim) * 0.66);
+    height: calc(var(--dim) * 0.85);
+    background: hsl(var(--hue), 90%, 85%);
+
+    background: repeating-linear-gradient(
+            -45deg,
+            hsl(var(--hue), 90%, 85%) 0vmin 0.2vmin,
+            hsla(var(--hue), 90%, 85%, 0) 0.2vmin 0.4vmin
+    );
+
+    opacity: 1;
+    /* just a tree */
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    filter: url(#drawn);
+
+    overflow: hidden;
+    transform: rotateY(var(--ry, 20deg));
+}
+main > div > .pizzazz {
+    /* tree with pizzazz */
+    clip-path: polygon(
+            50% 5%,
+            100% 100%,
+            0% 100%,
+            50% 5%,
+            50% 0%,
+            55% 10%,
+            42% 4%,
+            58% 4%,
+            45% 10%,
+            50% 0%
+    );
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes and-the-news {
+    0% {
+        filter: hue-rotate(-0.2turn);
+    }
+    100% {
+        filter: hue-rotate(0.2turn);
+    }
+}
+
+svg {
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+body {
+    background: hsl(232, 100%, 12%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* This is all just for the sparkle/snow background excessiveness */
+/**/
+main::before,
+main::after {
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    content: "";
+    background-image: var(--sm-dot), var(--md2-dot), var(--md-dot), var(--lg-dot),
+    var(--xsm-dot), var(--xmd2-dot), var(--xmd-dot), var(--xlg-dot),
+    var(--sm-dot), var(--xlg-dot2), var(--xlg-dot3), var(--lg-dot),
+    var(--xsm-dot), var(--xmd2-dot), var(--xmd-dot), var(--xlg-dot),
+    var(--sm-dot), var(--md2-dot), var(--md-dot), var(--xlg-dot2),
+    var(--xlg-dot3), var(--xmd2-dot), var(--xmd-dot), var(--xlg-dot),
+    var(--sm-dot), var(--md2-dot), var(--md-dot), var(--lg-dot), var(--xsm-dot),
+    var(--xmd2-dot), var(--xlg-dot2), var(--xlg-dot3);
+
+    background-size: var(--sm-size), var(--md2-size), var(--md-size),
+    var(--lg-size), var(--xsm-size), var(--xmd2-size), var(--xmd-size),
+    var(--xlg-size);
+
+    background-position: var(--sm-pos), var(--md2-pos), var(--md-pos),
+    var(--lg-pos), var(--xsm-pos), var(--xmd2-pos), var(--xmd-pos),
+    var(--xlg-pos), var(--sm3-pos), var(--md4-pos), var(--md3-pos),
+    var(--lg3-pos), var(--xsm3-pos), var(--xmd4-pos), var(--xmd3-pos),
+    var(--xlg3-pos), var(--sm5-pos), var(--md6-pos), var(--md5-pos),
+    var(--lg5-pos), var(--xsm5-pos), var(--xmd6-pos), var(--xmd5-pos),
+    var(--xlg5-pos), var(--sm7-pos), var(--md8-pos), var(--md7-pos),
+    var(--lg7-pos), var(--xsm7-pos), var(--xmd8-pos), var(--xmd7-pos),
+    var(--xlg7-pos);
+
+    background-repeat: repeat;
+
+    --s0: 0.23vmin;
+    --s1: 0.39vmin;
+    --s2: 0.2vmin;
+    --s3: 0.38vmin;
+    --s4: 0.34vmin;
+    --s5: 0.46vmin;
+    --s6: 0.38vmin;
+    --s7: 0.22vmin;
+    --s8: 0.12vmin;
+    --s9: 0.42vmin;
+    --s0: 0.24vmin;
+
+    --sm-dot: radial-gradient(
+            circle,
+            hsla(290, 100%, 100%, var(--opacity1)) var(--s1),
+            hsla(290, 100%, 100%, 0) var(--s1)
+    );
+
+    --md-dot: radial-gradient(
+            circle,
+            hsla(123, 100%, 100%, var(--opacity2)) var(--s2),
+            hsla(123, 100%, 100%, 0) var(--s2)
+    );
+
+    --md2-dot: radial-gradient(
+            circle,
+            hsla(190, 100%, 100%, var(--opacity3)) var(--s3),
+            hsla(190, 100%, 100%, 0) var(--s3)
+    );
+
+    /* pink */
+    --lg-dot: radial-gradient(
+            circle,
+            hsla(168, 100%, 100%, var(--opacity4)) var(--s4),
+            hsla(168, 100%, 100%, 0) var(--s4)
+    );
+
+    /* green */
+    --xsm-dot: radial-gradient(
+            circle,
+            hsla(343, 100%, 100%, var(--opacity5)) var(--s5),
+            hsla(343, 100%, 100%, 0) var(--s5)
+    );
+
+    /* violet */
+    --xmd-dot: radial-gradient(
+            circle,
+            hsla(223, 100%, 100%, var(--opacity0)) var(--s0),
+            hsla(223, 100%, 100%, 0) var(--s0)
+    );
+
+    /* yellow */
+    --xmd2-dot: radial-gradient(
+            circle,
+            hsla(68, 100%, 100%, var(--opacity6)) var(--s6),
+            hsla(68, 100%, 100%, 0) var(--s6)
+    );
+
+    /* orange */
+    --xlg-dot: radial-gradient(
+            circle,
+            hsla(33, 100%, 100%, var(--opacity7)) var(--s7),
+            hsla(33, 100%, 100%, 0) var(--s7)
+    );
+
+    /* orange */
+    --xlg-dot2: radial-gradient(
+            circle,
+            hsla(33, 100%, 100%, var(--opacity8)) var(--s8),
+            hsla(33, 100%, 100%, 0) var(--s8)
+    );
+
+    /* orange */
+    --xlg-dot3: radial-gradient(
+            circle,
+            hsla(33, 100%, 100%, var(--opacity9)) var(--s9),
+            hsla(33, 100%, 100%, 0) var(--s9)
+    );
+
+    --default-size: 40vmin;
+    --sm-size: var(--default-size) var(--default-size);
+    --md2-size: var(--default-size) var(--default-size);
+    --md-size: var(--default-size) var(--default-size);
+    --lg-size: var(--default-size) var(--default-size);
+    --xsm-size: var(--default-size) var(--default-size);
+    --xmd2-size: var(--default-size) var(--default-size);
+    --xmd-size: var(--default-size) var(--default-size);
+    --xlg-size: var(--default-size) var(--default-size);
+
+    --default-space: 5vmin;
+    --sm-pos: calc(var(--default-space) * 0.1) calc(var(--default-space) * 0.95);
+    --md2-pos: calc(var(--default-space) * 0) calc(var(--default-space) * 3.2);
+    --md-pos: calc(var(--default-space) * 1.1) calc(var(--default-space) * 0);
+    --lg-pos: calc(var(--default-space) * 1.3) calc(var(--default-space) * 1.8);
+    --xsm-pos: calc(var(--default-space) * 2.05) calc(var(--default-space) * 1.4);
+    --xmd2-pos: calc(var(--default-space) * 1.6) calc(var(--default-space) * 3.3);
+    --xmd-pos: calc(var(--default-space) * 3.1) calc(var(--default-space) * -0.3);
+    --xlg-pos: calc(var(--default-space) * 3) calc(var(--default-space) * 1.75);
+
+    --xsm3-pos: calc(var(--default-space) * 2.7) calc(var(--default-space) * 4.3);
+    --md3-pos: calc(var(--default-space) * 3.18) calc(var(--default-space) * 5.7);
+    --md4-pos: calc(var(--default-space) * 4.2) calc(var(--default-space) * 3.2);
+    --xlg3-pos: calc(var(--default-space) * 3.7) calc(var(--default-space) * 4.65);
+    --sm3-pos: calc(var(--default-space) * 5.1) calc(var(--default-space) * 4);
+    --xmd3-pos: calc(var(--default-space) * 4.8) calc(var(--default-space) * 6);
+    --xmd4-pos: calc(var(--default-space) * 6.2) calc(var(--default-space) * 3);
+    --lg3-pos: calc(var(--default-space) * 6) calc(var(--default-space) * 5);
+
+    --xsm5-pos: calc(var(--default-space) * 3.7) calc(var(--default-space) * 7.1);
+    --md5-pos: calc(var(--default-space) * 2.28) calc(var(--default-space) * 5.3);
+    --md6-pos: calc(var(--default-space) * 4.1) calc(var(--default-space) * 1.2);
+    --xlg5-pos: calc(var(--default-space) * 0.8) calc(var(--default-space) * 3.7);
+    --sm5-pos: calc(var(--default-space) * 5.1) calc(var(--default-space) * 1.8);
+    --xmd5-pos: calc(var(--default-space) * 4.8) calc(var(--default-space) * -0.8);
+    --xmd6-pos: calc(var(--default-space) * 5.8) calc(var(--default-space) * 7.3);
+    --lg5-pos: calc(var(--default-space) * 6.2) calc(var(--default-space) * 1.1);
+
+    --xsm7-pos: calc(var(--default-space) * -0.3)
+    calc(var(--default-space) * 5.15);
+    --md7-pos: calc(var(--default-space) * -0.1) calc(var(--default-space) * 7);
+    --md8-pos: calc(var(--default-space) * 1.2) calc(var(--default-space) * 5.85);
+    --xlg7-pos: calc(var(--default-space) * 1.8) calc(var(--default-space) * 6.7);
+    --sm7-pos: calc(var(--default-space) * 7.1) calc(var(--default-space) * -0.9);
+    --xmd7-pos: calc(var(--default-space) * 7.26) calc(var(--default-space) * 2.1);
+    --xmd8-pos: calc(var(--default-space) * -6.7) calc(var(--default-space) * 4.1);
+    --lg7-pos: calc(var(--default-space) * 6.92) calc(var(--default-space) * 6.2);
+    filter: blur(1.5px);
+
+    --opacity0: var(--default-opacity);
+    --opacity1: var(--default-opacity);
+    --opacity2: var(--default-opacity);
+    --opacity3: var(--default-opacity);
+    --opacity4: var(--default-opacity);
+    --opacity5: var(--default-opacity);
+    --opacity6: var(--default-opacity);
+    --opacity7: var(--default-opacity);
+    --opacity8: var(--default-opacity);
+    --opacity9: var(--default-opacity);
+    --default-opacity: 0.77;
+    --destination-opacity: 0.2;
+}
+main::before {
+    transform: scale(0.9) rotate(0.5turn);
+    --default-opacity: 0.27;
+}

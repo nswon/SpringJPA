@@ -1,0 +1,124 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #16161c;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 200vmin;
+}
+main {
+    position: relative;
+    --size: 66.67vmin;
+    --gap: 2.5vmin;
+    width: calc(var(--size) + var(--gap));
+    height: calc(var(--size) + var(--gap));
+    background: hsl(0,100%,100%,.75);
+    clip-path: polygon(
+            30% 0%, 70% 0%,
+            100% 30%, 100% 70%,
+            70% 100%, 30% 100%,
+            0% 70%, 0% 30%
+    );
+    transition: transform 167ms ease-in-out;
+}
+.oct {
+    --img: url(https://i.ytimg.com/vi/ULHaGvNm_Zw/maxresdefault.jpg);
+    width: var(--size);
+    height: var(--size);
+    --hue: 183;
+    background:
+            radial-gradient(circle at 20% 20%,
+            hsla(0, 10%, 0%,.1),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 30% 60%,
+            hsla(0, 10%, 0%,.12),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 80% 80%,
+            hsla(0, 10%, 0%,.16),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 80% 30%,
+            hsla(0, 10%, 0%, .12),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 70% 20%,
+            hsla(0, 10%, 0%,.1),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 70% 60%,
+            hsla(0, 10%, 0%,.12),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 80% 20%,
+            hsla(0, 10%, 0%,.15),
+            hsla(0, 10%, 0%, 0%) 25%),
+            radial-gradient(circle at 80% 50%,
+            hsla(0, 10%, 0%, .12),
+            hsla(0, 10%, 0%, 0%) 25%),
+            var(--img);
+    background-color: hsl(var(--hue), 100%, 80%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    clip-path: polygon(
+            30% 0%, 70% 0%,
+            100% 30%, 100% 70%,
+            70% 100%, 30% 100%,
+            0% 70%, 0% 30%
+    );
+    position: absolute;
+    top: calc(var(--gap) / 2);
+    left: calc(var(--gap) / 2);
+    transition: transform 167ms ease-in-out;
+}
+.animate {
+    --hue: 336;
+    --img: url(https://i.ytimg.com/vi/MxNaV6c3VwI/maxresdefault.jpg);
+}
+.backing {
+    filter: drop-shadow(10px 10px 10px #fff);
+}
+/*main:hover {
+  transform: rotate(-45deg);
+}*/
+main:hover .oct {
+    transform: scale(.9275);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(0deg) rotateZ(0turn);
+    }
+    100% {
+        transform: rotateX(0deg) rotateZ(-1turn);
+    }
+}
+
+
+body {
+
+    background:
+            radial-gradient(circle at 20% 20%,
+            hsla(0, 10%, 100%,.03),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 30% 60%,
+            hsla(0, 10%, 100%,.03),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 80% 80%,
+            hsla(0, 10%, 100%,.03),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 80% 30%,
+            hsla(0, 10%, 100%, .02),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 70% 20%,
+            hsla(0, 10%, 100%,.02),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 70% 60%,
+            hsla(0, 10%, 100%,.02),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 80% 20%,
+            hsla(0, 10%, 100%,.02),
+            hsla(0, 10%, 100%, 0%) 25%),
+            radial-gradient(circle at 80% 50%,
+            hsla(0, 10%, 100%, .03),
+            hsla(0, 10%, 100%, 0%) 25%);
+    background-color: #16161c;
+}

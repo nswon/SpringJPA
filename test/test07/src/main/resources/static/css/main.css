@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    padding-top: 20vh;
+}
+#slider {
+    height: 200px;
+    width: 100%;
+}
+.item:nth-child(1) {background-color: #FE2E2E;}
+.item:nth-child(2) {background-color: #FA5858;}
+.item:nth-child(3) {background-color: #8000FF;}
+.item:nth-child(4) {background-color: #9A2EFE;}
+.item:nth-child(5) {background-color: #0489B1;}
+.item:nth-child(6) {background-color: #01A9DB;}
+.item:nth-child(7) {background-color: #2a8545;}
+.item:nth-child(8) {background-color: #42c268;}
+.item:nth-child(9) {background-color: #FFBF00;}
+.item:nth-child(10) {background-color: #FACC2E;}
+.item:nth-child(11) {background-color: #302d2c;}
+.item:nth-child(12) {background-color: #444241;}
+
+.button-box {
+    text-align:center;
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    background-color: #585858;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height:40px;
+    text-align:center;
+    font-weight:bold;
+    margin-right: 10px;
+}
+
+a:last-child {
+    margin-right: 0px;
+}
+
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#one {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #FE2E2E;
+}
+
+
+
+#one:hover {
+    cursor: pointer;
+}
+
+#two {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #FA5858;
+}
+#two:hover {
+    cursor: pointer;
+}
+
+#three {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #8000FF;
+}
+#three:hover {
+    cursor: pointer;
+}
+
+#four {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #9A2EFE;
+}
+#four:hover {
+    cursor: pointer;
+}
+
+#five {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #0489B1;
+}
+#five:hover {
+    cursor: pointer;
+}
+
+#six {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #01A9DB;
+}
+#six:hover {
+    cursor: pointer;
+}
+
+#seven {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #2a8545;
+}
+#seven:hover {
+    cursor: pointer;
+}
+
+#eight {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #42c268;
+}
+#eight:hover {
+    cursor: pointer;
+}
+
+#nine {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #FFBF00;
+}
+#nine:hover {
+    cursor: pointer;
+}
+
+#ten {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #FACC2E;
+}
+#ten:hover {
+    cursor: pointer;
+}
+
+#eleven {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #302d2c;
+}
+#eleven:hover {
+    cursor: pointer;
+}
+
+#twelve {
+    font-family: 'MaruBuri-Regular';
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+    border: 40px;
+    background-color: #444241;
+}
+#twelve:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+.container {
+    padding-top: 100px;
+}
+

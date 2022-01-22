@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div id="slider">
+        <div class="item"><button id="one" onclick="location.href='/work1'">My Name</button></div>
+        <div class="item"><button id="two" onclick="location.href='/work2'">Moving Ball</button></div>
+        <div class="item"><button id="three" onclick="location.href='/work3'">Wave</button></div>
+        <div class="item"><button id="four" onclick="location.href='/work4'">Scroll</button></div>
+        <div class="item"><button id="five" onclick="location.href='/work5'">Cube</button></div>
+        <div class="item"><button id="six" onclick="location.href='/work6'">Animation</button></div>
+        <div class="item"><button id="seven" onclick="location.href='/work7'">Color tree</button></div>
+        <div class="item"><button id="eight" onclick="location.href='/work8'">Birthday</button></div>
+        <div class="item"><button id="nine" onclick="location.href='/work9'">Img</button></div>
+        <div class="item"><button id="ten" onclick="location.href='/work10'">Loding</button></div>
+        <div class="item"><button id="eleven" onclick="location.href='/work11'">Hello</button></div>
+        <div class="item"><button id="twelve" onclick="location.href='/work12'">Slide</button></div>
+    </div>
+    <div class="button-box">
+        <a href="#" onclick="slider.next()"><i class="fas fa-chevron-left"><</i></a>
+        <a href="#" onclick="slider.prev()"><i class="fas fa-chevron-right">></i></a>
+        <a href="#" onclick="slider.auto()"><i class="fas fa-play"></i>O</a>
+        <a href="#" onclick="slider.stop()"><i class="fas fa-stop"></i>ㅁ</a>
+        <script th:inline="javascript" th:src="@{/js/main.js}"></script>
+    </div>
+</div>
+</body>
+</html>
