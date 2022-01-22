@@ -1,0 +1,31 @@
+CREATE TABLE USER(
+   UID INT AUTO_INCREMENT PRIMARY KEY,
+   ID VARCHAR(255) unique,
+   PW VARCHAR(255),
+   NAME VARCHAR(255),
+   POINT INT default 0,
+   TICKET INT default 0
+);
+
+//mysql
+CREATE TABLE WORKLOG
+(
+	id bigint primary key AUTO_INCREMENT,
+	user_id bigint,
+    start_latitude DECIMAL(17,14),
+	start_Longitude DECIMAL(17,14),
+	desti_latitude DECIMAL(17,14),
+	desti_Longitude DECIMAL(17,14),
+    reg_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	mod_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	foreign key (user_id) references user(uid)
+)
+
+CREATE TABLE REPORT
+(
+	id bigint primary key AUTO_INCREMENT,
+	user_id bigint not null,
+    content TEXT,
+    reg_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	foreign key (user_id) references user(uid)
+)
