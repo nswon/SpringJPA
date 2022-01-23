@@ -1,16 +1,22 @@
 package com.example.bookmanager.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Data // Getter, Setter, toString 까지 모두 포함
 @NoArgsConstructor //인자가 없는 생성자  (ex : 생성자 : public User() {} / method : User user = new User(); )
 @AllArgsConstructor //인자가 있는 생성자 (ex : 생성자 : public User(String name) {} / method : User user = new User(name); )
+@Builder
+@Entity
 public class User {
+
+    @Id //Primary key, id = User 객체의 PK값
+    @GeneratedValue //숫자가 자동으로 증가
+    private long id;
 
     //필드 변수
     @NonNull //
