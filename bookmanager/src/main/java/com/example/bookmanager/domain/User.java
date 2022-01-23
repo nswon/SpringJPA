@@ -1,5 +1,6 @@
 package com.example.bookmanager.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -21,8 +22,11 @@ public class User {
     //필드 변수
     @NonNull //
     private String name;
+
     private String email;
+
     private LocalDateTime createdAt; //생성시간, 수정시간은 Jpa domain을 만들때 필수로 포함됨
+
     private LocalDateTime updatedAt;
 
 }
