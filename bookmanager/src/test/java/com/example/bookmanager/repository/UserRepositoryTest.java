@@ -12,9 +12,11 @@ class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    void crud() { //crud : create, read, update, delete
+    void crud() {
+        //crud : create, read, update, delete
 
         User user = new User();
-        System.out.println(user.toString());
+        //System.out.println(user.toString());
+
     }
 }
