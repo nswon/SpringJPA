@@ -15,8 +15,9 @@ public class User {
 
      private String result = word[(int) random];
 
-
      public String toResultString() {
          return result;
      }
+
+
 }

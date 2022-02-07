@@ -11,6 +11,7 @@ public class ApiController {
 
     @GetMapping("/get")
     public String get(User user) {
+        System.out.println("random word : " + user.toResultString());
         return user.toResultString();
     }
 }
