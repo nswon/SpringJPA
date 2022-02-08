@@ -2,8 +2,10 @@ package com.example.bookmanager.repository;
 
 import com.example.bookmanager.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
@@ -33,5 +35,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findLast1ByName(String name);
 
+    @Query(value = "select * from user limit 1;", nativeQuery = true)
+    Map<String, Object> findRawRecord();
 
 }

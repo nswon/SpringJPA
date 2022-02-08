@@ -1,5 +1,6 @@
 package com.example.bookmanager.repository;
 
+import com.example.bookmanager.domain.Gender;
 import com.example.bookmanager.domain.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,38 @@ class UserRepositoryTest {
         System.out.println("findTop1ByName : " + userRepository.findTop1ByName("steve"));
 
         System.out.println("findLast1ByName : " + userRepository.findLast1ByName("steve"));
+    }
+
+    @Test
+    void insertAndUpdateTest() {
+        User user = new User();
+        user.setName("martin");
+        user.setEmail("martin@gmail.com");
+        userRepository.save(user);
+
+        User user2 = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user2.setName("marrrrrtin"); // 수정
+        userRepository.save(user2); // 저장
+
+        /*
+        findById(1L) : 첫번째 id인 martin을 가져옴
+        orElseThrow : 오류를 지정해줌
+         */
+
+    }
+
+    @Test
+    void enumTest() {
+        User user = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user.setGender(Gender.MALE);
+
+        userRepository.save(user); // update
+
+        userRepository.findAll().forEach( e -> {
+            System.out.println(e);
+        });
+
+        System.out.println(userRepository.findRawRecord().get("gender"));
+
     }
 }
