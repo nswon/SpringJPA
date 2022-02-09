@@ -68,4 +68,39 @@ public class User {
     @Enumerated(value = EnumType.STRING) // 잠재적 오류를 방지하기위함. 매우 중요함
     private Gender gender;
 
+    @PrePersist // insert method 가 실행되기 이전에 실행
+    public void prePersist() {
+        System.out.println(">>> prePersist");
+    }
+
+    @PostPersist // insert method 가 실행된 직후
+    public void postPersist() {
+        System.out.println(">>> postPersist");
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        System.out.println(">>> preUpdate");
+    }
+
+    @PostUpdate
+    public void postUpdate() {
+        System.out.println(">>> postUpdate");
+    }
+
+    @PreRemove
+    public void preRemove() {
+        System.out.println(">>> preRemove");
+    }
+
+    @PostRemove
+    public void postRemove() {
+        System.out.println(">>> postRemove");
+    }
+
+    @PostLoad
+    public void postLoad() {
+        System.out.println(">>> postLoad");
+    }
+
 }

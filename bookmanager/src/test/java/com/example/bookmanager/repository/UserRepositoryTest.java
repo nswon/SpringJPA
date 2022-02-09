@@ -73,4 +73,20 @@ class UserRepositoryTest {
         System.out.println(userRepository.findRawRecord().get("gender"));
 
     }
+
+    @Test
+    void listenerTest() {
+        User user = new User();
+        user.setName("martin");
+        user.setEmail("martin@gmail.com");
+
+        userRepository.save(user);
+
+        User user2 = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user2.setName("marrrrtin");
+
+        userRepository.save(user2);
+
+        userRepository.deleteById(4L);
+    }
 }
