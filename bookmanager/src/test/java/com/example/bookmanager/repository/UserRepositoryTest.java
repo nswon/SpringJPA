@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
+
 @SpringBootTest //Test 필수 annotation
 class UserRepositoryTest {
 
@@ -88,5 +90,36 @@ class UserRepositoryTest {
         userRepository.save(user2);
 
         userRepository.deleteById(4L);
+    }
+
+    @Test
+    void prePersistTest() {
+        User user = new User();
+        user.setEmail("martin@gmail.com");
+        user.setName("martin");
+
+        /*
+        User entity 에서 set 하는것이 더 낮다. 나중에 set 을 넣지 안는 실수가 일어날 수 있기 때문
+        user.setCreatedAt(LocalDateTime.now());
+        user.setUpdatedAt(LocalDateTime.now());
+        */
+
+        userRepository.save(user);
+
+        System.out.println(userRepository.findByEmail("martin@gmail.com"));
+
+
+    }
+
+    @Test
+    void preUpdateTest() {
+        User user = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+
+        System.out.println("as-is : " + user);
+
+        user.setName("martin22");
+        userRepository.save(user);
+
+        System.out.println("to-be : " + userRepository.findAll().get(0));
     }
 }
