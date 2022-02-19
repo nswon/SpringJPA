@@ -14,6 +14,14 @@ public class ApiController {
     }
 
     //RequestBody
+    /*
+    db : mysql
+    ex :
+    {
+        "name" : "namse",
+        "age" : 17
+    }
+     */
     @PostMapping("/post")
     public User post(@RequestBody User user) {
         System.out.println(user);
