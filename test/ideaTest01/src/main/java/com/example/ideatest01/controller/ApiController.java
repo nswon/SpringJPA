@@ -22,6 +22,7 @@ public class ApiController {
         "age" : 17
     }
      */
+
     @PostMapping("/post/{uid}")
     public User post(@RequestBody User user, @PathVariable Long uid) {
         System.out.println(user);
