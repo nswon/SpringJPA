@@ -17,4 +17,6 @@ public class User {
     @NonNull
     private int age;
 
+    private String password;
+
 }
