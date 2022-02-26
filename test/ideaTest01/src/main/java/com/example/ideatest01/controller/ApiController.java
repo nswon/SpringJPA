@@ -1,6 +1,7 @@
 package com.example.ideatest01.controller;
 
 import com.example.ideatest01.domain.User;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -37,5 +38,9 @@ public class ApiController {
         return user;
     }
 
+    @PostMapping
+    public ResponseEntity post(@RequestBody ResponseEntity response) {
+        return ResponseEntity.ok(response);
+    }
 
 }
